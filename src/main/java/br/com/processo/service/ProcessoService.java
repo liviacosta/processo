@@ -14,7 +14,7 @@ import br.com.processo.exception.BadRequestException;
 import br.com.processo.repository.ProcessoRepository;
 import br.com.processo.repository.ReuRepository;
 
-@Service    
+@Service
 public class ProcessoService {
     private ProcessoRepository processRepository;
     private ReuRepository reuRepository;
@@ -25,7 +25,6 @@ public class ProcessoService {
         this.reuRepository = reuRepository;
     }
 
-    @Transactional
     public Page<Processo> findAll(Pageable pageable) {
         if (processRepository.findAll(pageable).isEmpty()) {
             throw new BadRequestException("Não existem processos");
@@ -63,7 +62,6 @@ public class ProcessoService {
 
     }
 
-    @Transactional
     public Processo getById(Long id) {
         Optional<Processo> processo = processRepository.findById(id);
         if (!processo.isPresent()) {

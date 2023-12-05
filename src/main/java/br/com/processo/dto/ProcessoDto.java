@@ -21,6 +21,10 @@ public class ProcessoDto {
         this.reus = reus;
     }
 
+    public ProcessoDto(String codigoProcesso) {
+        this.codigoProcesso = codigoProcesso;
+    }
+
     public ProcessoDto(Processo entity) {
 		id = entity.getId();
 		codigoProcesso = entity.getCodigoProcesso();
