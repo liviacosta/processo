@@ -48,7 +48,7 @@ class ProcessoApplicationTests {
 
 	@BeforeAll
 	public void start() {
-
+		processoRepository.deleteAll();
 		processo = new ProcessoDto("Codigo processo testadefas");
 	}
 
